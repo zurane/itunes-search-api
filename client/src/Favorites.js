@@ -3,7 +3,7 @@ import { PiMinusLight, PiCaretCircleDownThin } from "react-icons/pi";
 function Favorites({ favorites, removeFromFavorites, expand, setExpand }) {
   return (
     <div
-      style={{ height: expand ? "70%" : "5%" }}
+      style={{ width: expand ? "40%" : "0" }}
       className="favorites-container"
     >
       <div className="fav-header">

@@ -5,6 +5,7 @@ import itunes_logo from "./assets/itunes_logo.svg";
 import { PiHeart } from "react-icons/pi";
 import "./App.css";
 import Favorites from "./Favorites";
+import AppSideMenu from "./AppSideMenu";
 
 function App() {
   const [term, setTerm] = useState("");
@@ -62,6 +63,7 @@ function App() {
 
   return (
     <>
+    <AppSideMenu/>
       <div className="app-container">
         {!token ? (
           <Login setToken={setToken} />
