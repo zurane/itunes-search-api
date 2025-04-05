@@ -86,6 +86,7 @@ function App() {
             </div>
 
             <div className="search-container">
+              <div className="search-bar">
               <input
                 type="text"
                 value={term}
@@ -93,6 +94,7 @@ function App() {
                 placeholder="Search for music, movies, and podcasts"
                 className="search-input"
               />
+              <div className="search-left">
               <select
                 value={media}
                 onChange={(e) => setMedia(e.target.value)}
@@ -107,6 +109,8 @@ function App() {
               <button onClick={search} className="search-button">
                 Search
               </button>
+              </div>
+              </div>
             </div>
 
             {loading && <p className="loading">Loading...</p>}
