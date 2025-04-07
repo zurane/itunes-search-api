@@ -1,16 +1,20 @@
-import { PiMinusLight, PiCaretCircleDownThin } from "react-icons/pi";
+import {
+  PiMinusLight,
+  PiCaretCircleDownThin,
+  PiXCircleLight,
+} from "react-icons/pi";
 
 function Favorites({ favorites, removeFromFavorites, expand, setExpand }) {
   return (
     <div
-      style={{ width: expand ? "40%" : "0" }}
+      style={{ width: expand ? "25%" : "0" }}
       className="favorites-container"
     >
       <div className="fav-header">
         <span className="fav-heading">My Favorites ({favorites.length})</span>
         <div>
           <button onClick={() => setExpand(!expand)} className="expand-btn">
-            {expand ? <PiMinusLight /> : <PiCaretCircleDownThin />}
+            {expand ? <PiXCircleLight /> : <PiMinusLight />}
           </button>
         </div>
       </div>

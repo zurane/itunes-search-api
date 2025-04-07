@@ -3,6 +3,7 @@ import axios from "axios";
 import Login from "./Login";
 import itunes_logo from "./assets/itunes_logo.svg";
 import { PiHeart } from "react-icons/pi";
+import { PiMagnifyingGlass } from "react-icons/pi";
 import "./App.css";
 import Favorites from "./Favorites";
 import AppSideMenu from "./AppSideMenu";
@@ -14,6 +15,7 @@ function App() {
   const [token, setToken] = useState(localStorage.getItem("token") || "");
   const [loading, setLoading] = useState(false);
   const [expand, setExpand] = useState(true);
+  const [showFavorites, setShowFavorites] = useState(expand);
   const [favorites, setFavorites] = useState([]);
   const [error, setError] = useState("");
 
@@ -63,27 +65,12 @@ function App() {
 
   return (
     <>
-    <AppSideMenu/>
+    <AppSideMenu handleLogout={handleLogout} expand={expand} setExpand={setExpand}/>
       <div className="app-container">
         {!token ? (
           <Login setToken={setToken} />
         ) : (
           <>
-            <div className="nav-bar">
-              <div className="itunes-logo-container">
-                <img
-                  src={itunes_logo}
-                  width={30}
-                  alt="iTunes logo"
-                  className="itunes-logo"
-                />
-              </div>
-              <div>
-                <button onClick={handleLogout} className="logout-button">
-                  Logout
-                </button>
-              </div>
-            </div>
 
             <div className="search-container">
               <div className="search-bar">
@@ -100,14 +87,14 @@ function App() {
                 onChange={(e) => setMedia(e.target.value)}
                 className="search-select"
               >
-                <option value="all">All</option>
+                <option value="all">Show All</option>
                 <option value="music">Music</option>
                 <option value="movie">Movies</option>
                 <option value="podcast">Podcasts</option>
               </select>
 
               <button onClick={search} className="search-button">
-                Search
+              <PiMagnifyingGlass />
               </button>
               </div>
               </div>
