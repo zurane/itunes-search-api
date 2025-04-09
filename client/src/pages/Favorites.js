@@ -1,6 +1,5 @@
 import {
   PiMinusLight,
-  PiCaretCircleDownThin,
   PiXCircleLight,
 } from "react-icons/pi";
 
