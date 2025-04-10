@@ -1,33 +1,33 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Login from "../Login";
 import { PiPlusCircle } from "react-icons/pi";
 import "../App.css";
 import LinearProgress from "@mui/joy/LinearProgress";
 import SearchBar from "../components/SearchBar";
-import Navigation from "../components/Navigation";
 
 function Dashboard() {
   const [term, setTerm] = useState("");
   const [media, setMedia] = useState("all");
   const [results, setResults] = useState([]);
-  const [token, setToken] = useState(localStorage.getItem("token") || "");
   const [loading, setLoading] = useState(false);
-  const [expand, setExpand] = useState(true);
-  const [favorites, setFavorites] = useState([]);
+  const [token, setToken] = useState(localStorage.getItem("token") || "");
+  const [favorites, setFavorites] = useState(() => {
+    const stored = localStorage.getItem("favorites");
+    return stored ? JSON.parse(stored) : [];
+  });
   const [error, setError] = useState("");
 
   const addFavorite = (item) => {
-    // Check if the item is already in the favorites list
     if (!favorites.some((fav) => fav.trackId === item.trackId)) {
-      // If not, add the item to the list by updating the state
-      setFavorites([...favorites, item]);
+      setFavorites([...favorites, item]); // just update state
+      console.log("Added to favorites:", item);
     }
   };
 
-  //   const removeFromFavorites = (id) => {
-  //     setFavorites(favorites.filter((item) => item.trackId !== id));
-  //   };
+  useEffect(() => {
+    localStorage.setItem("favorites", JSON.stringify(favorites));
+  }, [favorites]);
 
   // Function to search for music, movies, etc.
   const search = async () => {
@@ -56,24 +56,13 @@ function Dashboard() {
     }
   };
 
-  const handleLogout = () => {
-    setToken("");
-    localStorage.removeItem("token");
-  };
-
   return (
     <>
-      {/* <AppSideMenu
-        handleLogout={handleLogout}
-        expand={expand}
-        setExpand={setExpand}
-      /> */}
-      <div className="app-container">
+      <div>
         {!token ? (
           <Login setToken={setToken} />
         ) : (
           <>
-            <Navigation handleLogout={handleLogout} />
             <SearchBar
               term={term}
               media={media}
@@ -114,14 +103,6 @@ function Dashboard() {
         )}
       </div>
       {/* Favorite list container widget */}
-      {/* {token ? (
-        <Favorites
-          expand={expand}
-          setExpand={setExpand}
-          removeFromFavorites={removeFromFavorites}
-          favorites={favorites}
-        />
-      ) : null} */}
     </>
   );
 }

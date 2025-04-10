@@ -1,6 +1,6 @@
-import { NavLink } from "react-router";
+import { NavLink } from "react-router-dom";
 
-function Navigation({ handleLogout }) {
+function Navigation({ handleLogout}) {
   const activeStyle = {
     color: "#ff0000",
   };
@@ -10,13 +10,19 @@ function Navigation({ handleLogout }) {
       <div className="navigation-menu">
         <ul className="navigation-list">
           <NavLink
-            style={(isActive) => (isActive ? activeStyle : "")}
+            style={({ isActive }) => (isActive ? activeStyle : undefined)}
             className="navigation-item"
+            to="/"
           >
             Search
           </NavLink>
-          <NavLink className="navigation-item">Favorites</NavLink>
-          <NavLink className="navigation-item">Contact</NavLink>
+          <NavLink
+            style={({ isActive }) => (isActive ? activeStyle : undefined)}
+            to="/favorites"
+            className="navigation-item"
+          >
+            Favorites
+          </NavLink>
         </ul>
       </div>
       <div className="navigation-user">

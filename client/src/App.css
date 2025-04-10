@@ -69,16 +69,9 @@ body {
 }
 
 .favorites-container {
-  position: fixed;
-  overflow: hidden;
-  top: 0px;
-  right: 0px;
-  height: 100%;
-  background: white;
-  border: 3px solid #ececec;
-  box-shadow: -5px 0 10px rgba(0, 0, 0, 0.048);
-  padding: 10px;
-  transition: 0.3s ease-in-out;
+  max-width: 700px;
+  margin: auto;
+  padding: 5px;
 }
 
 .favorites-list {
@@ -213,7 +206,6 @@ h1 {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: white;
   border-radius: 10px;
   width: 100%;
   padding: 15px 2px;
@@ -358,6 +350,20 @@ h1 {
 .no-results {
   color: #555;
   font-style: italic;
+}
+
+.delete-btn {
+  background: none;
+  border: none !important;
+  position: absolute;
+  cursor: pointer;
+  color: #ff2020;
+  font-size: 13px;
+  right: 30px;
+  padding-right: 30px;
+  border-radius: 100%;
+  width: 30px;
+  transition: transform 0.2s ease-in-out;
 }
 
 /* custom select */
