@@ -1,5 +1,6 @@
 import React from "react";
 import { useState, useEffect } from "react";
+import { NavLink } from "react-router";
 
 function FavoritesPage() {
   // This component retrieves the favorites from local storage and displays them
@@ -17,8 +18,14 @@ function FavoritesPage() {
   };
 
   return (
+  <>
+    <div className="filters">
+        <NavLink className="tab">Music</NavLink>
+        <NavLink className="tab">Movies</NavLink>
+        <NavLink className="tab">Podcasts</NavLink>
+      </div>
     <div className="favorites-container">
-      <h3>Your Favorites</h3>
+      
       {favorites.length > 0 ? (
         <ul className="results-list">
           {favorites.map((item, index) => (
@@ -45,6 +52,8 @@ function FavoritesPage() {
         <p>No favorites added yet.</p>
       )}
     </div>
+  
+  </>
   );
 }
 
