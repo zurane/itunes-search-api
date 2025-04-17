@@ -1,50 +1,56 @@
 .login-container {
-    max-width: 400px;
-    margin: 50px auto;
-    padding: 25px;
-    background: white;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    border-radius: 5px;
-    text-align: center;
+  max-width: 300px;
+  margin: 100px auto;
+  padding: 25px;
+  background: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  text-align: center;
 }
 
 h2 {
-    color: #333;
-    font-weight: 500;
+  color: #333;
+  font-weight: 500;
+  font-size: 16px;
 }
 
-input {
-    width: 90%;
-    padding: 15px;
-    margin: 11px 0;
-    border: 1px solid #ddd;
-    border-radius: 5px;
+.login-input {
+  width: 90%;
+  padding: 13px 10px;
+  margin: 8px 0;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.login-input:focus {
+  border: 2px solid #0a84ff;
+  outline: none;
 }
 
 .login-btn {
-    width: 97%;
-    padding: 15px;
-    margin: 10px 0px;
-    background: #000000;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+  width: 100%;
+  padding: 13px 15px;
+  font-size: 16px;
+  margin: 10px 0px;
+  background: #ff375f;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
 .login-hint {
   margin-top: 10px;
-  font-size: 0.8em;
+  font-size: 0.5em;
   color: #555;
 }
 
 .login-hint span {
-    text-decoration: underline;
-    color:blue
+  text-decoration: underline;
+  color: blue;
 }
 
 .error-message {
-    color: red;
-    font-size: 15px;
-    font-weight: 500;
+  color: red;
+  font-size: 15px;
 }

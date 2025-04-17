@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { PiCaretRight } from "react-icons/pi";
 
 function Music() {
   // This component retrieves the favorites from local storage and displays them
@@ -37,7 +38,7 @@ function Music() {
                     onClick={() => removeFromFavorites(item.trackId)}
                     className="delete-btn"
                   >
-                    Remove
+                   <PiCaretRight/>
                   </button>
                 </li>
               ))}

@@ -8,7 +8,7 @@ function SearchBar({ term, setTerm, media, setMedia, search }) {
           type="text"
           value={term}
           onChange={(e) => setTerm(e.target.value)}
-          placeholder="Search for music, movies, and podcasts"
+          placeholder="Find music, movies, and podcasts that you like"
           className="search-input"
         />
         <div className="search-left">

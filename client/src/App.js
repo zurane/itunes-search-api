@@ -8,6 +8,8 @@ import Music from "./pages/Music";
 import Movies from "./pages/Movies";
 import Podcasts from "./pages/Podcasts";
 import AllFavorites from "./pages/AllFavorites";
+import ContactUs from "./pages/ContactUs";
+import Support from "./pages/Support";
 
 function App() {
   const [token, setToken] = useState(localStorage.getItem("token") || "");
@@ -24,13 +26,15 @@ function App() {
       ) : (
         <Layout handleLogout={handleLogout}>
           <Routes>
-            <Route index element={<Dashboard />} />
+            <Route path="/" element={<Dashboard />} />
             <Route path="/favorites" element={<FavoritesPage />}>
               <Route index element={<AllFavorites />} />
               <Route path="music" element={<Music />} />
               <Route path="movies" element={<Movies />} />
               <Route path="podcasts" element={<Podcasts />} />
             </Route>
+            <Route path="/contact" element={<ContactUs />} />
+            <Route path="/support" element={<Support />} />
           </Routes>
         </Layout>
       )}

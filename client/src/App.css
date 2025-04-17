@@ -133,9 +133,9 @@ h1 {
 /* Logout Button */
 .logout-button {
   padding: 10px 20px;
-  background: #dc3545;
+  background: #ff375f;
   color: white;
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 600;
   border: none;
   border-radius: 5px;
@@ -143,7 +143,7 @@ h1 {
 }
 
 .logout-button:hover {
-  background: #c82333;
+  background: #d30f47;
 }
 
 /* Search Section */
@@ -177,7 +177,7 @@ h1 {
   padding: 5px;
   background-color: transparent;
   border: none;
-  font-size: 16px;
+  font-size: 14px;
 }
 
 .search-input:focus {
@@ -190,7 +190,7 @@ h1 {
   border: none;
   border-radius: 5px;
   background-color: transparent;
-  font-size: 16px;
+  font-size: 14px;
 }
 
 .search-button {
@@ -224,7 +224,7 @@ h1 {
 .navigation-item {
   list-style: none;
   margin: 0 10px;
-  font-size: 17px;
+  font-size: 14px;
   text-decoration: none;
   color: #333;
   cursor: pointer;
@@ -245,7 +245,6 @@ h1 {
 .results-list {
   list-style: none;
   padding: 0;
-  margin-top: 20px;
 }
 
 .result-item {
@@ -363,7 +362,7 @@ h1 {
   cursor: pointer;
   color: #ff2020;
   font-size: 13px;
-  right: 30px;
+  right: 8px;
   padding-right: 30px;
   border-radius: 100%;
   width: 30px;
@@ -376,7 +375,9 @@ h1 {
   justify-content: left !important;
   gap: 25px;
   text-align: left !important;
-  padding: 15px 30px 0px 5px;
+  padding: 15px 30px 10px 5px;
+  background-color: #ffffff;
+  border-bottom: 2px solid #ffbdbd;
   margin-left: 8px;
 }
 
@@ -386,6 +387,18 @@ h1 {
   font-size: 14px;
   padding: 5px;
   border-radius: 5px;
+  position: relative;
+}
+
+.tab-active::after {
+  content: " ";
+  height: 4px;
+  width: 100%;
+  background-color: #ffbdbd;
+  position: absolute;
+  bottom: -10px;
+  right: 0;
+  left: 0;
 }
 
 /* custom select */

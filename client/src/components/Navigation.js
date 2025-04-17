@@ -2,7 +2,7 @@ import { NavLink } from "react-router-dom";
 
 function Navigation({ handleLogout}) {
   const activeStyle = {
-    color: "#ff0000",
+    color: "#ff375f",
   };
 
   return (
@@ -14,14 +14,28 @@ function Navigation({ handleLogout}) {
             className="navigation-item"
             to="/"
           >
-            Search
+            Home
           </NavLink>
           <NavLink
             style={({ isActive }) => (isActive ? activeStyle : undefined)}
             to="/favorites"
             className="navigation-item"
           >
-            Favorites
+            My Library
+          </NavLink>
+          <NavLink
+            style={({ isActive }) => (isActive ? activeStyle : undefined)}
+            to="/contact"
+            className="navigation-item"
+          >
+            Contact us
+          </NavLink>
+          <NavLink
+            style={({ isActive }) => (isActive ? activeStyle : undefined)}
+            to="/support"
+            className="navigation-item"
+          >
+            Support
           </NavLink>
         </ul>
       </div>

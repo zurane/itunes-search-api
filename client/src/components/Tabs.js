@@ -1,36 +1,30 @@
 import { NavLink } from "react-router-dom";
 
 function Tabs() {
-  const activeStyle = {
-    background: "#f0f0f0",
-  };
+
   return (
     <div className="filters">
       <NavLink
-        style={({ isActive }) => (isActive ? activeStyle : undefined)}
         to=""
-        className="tab"
+        className='tab'
       >
         All
       </NavLink>
       <NavLink
-        style={({ isActive }) => (isActive ? activeStyle : undefined)}
         to="music"
-        className="tab"
+        className={({ isActive }) => `tab${isActive ? " tab-active" : ""}`}
       >
         Music
       </NavLink>
       <NavLink
-        style={({ isActive }) => (isActive ? activeStyle : undefined)}
         to="movies"
-        className="tab"
+        className={({ isActive }) => `tab${isActive ? " tab-active" : ""}`}
       >
         Movies
       </NavLink>
       <NavLink
-        style={({ isActive }) => (isActive ? activeStyle : undefined)}
         to="podcasts"
-        className="tab"
+        className={({ isActive }) => `tab${isActive ? " tab-active" : ""}`}
       >
         Podcasts
       </NavLink>

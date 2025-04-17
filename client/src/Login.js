@@ -33,30 +33,29 @@ function Login({ setToken }) {
 
   return (
     <div className="login-container">
-      <h2>Login</h2>
+      <h2>Log in to continue</h2>
       {error && <p className="error-message">{error}</p>}
       <form onSubmit={handleLogin}>
         <input
           type="text"
-          placeholder="Username"
+          placeholder="Enter your username"
+          className="login-input"
           value={username}
           onChange={(e) => setUsername(e.target.value)}
           required
         />
         <input
           type="password"
-          placeholder="Password"
+          placeholder="Enter your password"
+          className="login-input"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           required
         />
         <button className="login-btn" type="submit">
-          Login
+          Continue
         </button>
       </form>
-      <p className="login-hint">
-       ⚠️ Hint: Username is <span>admin</span> and password is <span>password</span>.
-      </p>
     </div>
   );
 }
