@@ -64,7 +64,7 @@ body {
   gap: 5px;
 }
 
-.footer-icons>a {
+.footer-icons > a {
   margin-top: 20px 0;
   text-decoration: none;
 }
@@ -86,7 +86,7 @@ body {
   padding: 10px;
 }
 
-.fav-header>div>button {
+.fav-header > div > button {
   background: none;
   padding-top: 5px;
   border: none;
@@ -237,8 +237,13 @@ h1 {
 }
 
 .error-message {
-  color: red;
-  font-weight: bold;
+  color: #e07b01;
+  font-size: 15px;
+  font-weight: 500;
+  text-align: left !important;
+  background: #ffbb801f;
+  padding: 10px 9px;
+  border-left: 5px solid #e07b01;
 }
 
 /* Results List */
