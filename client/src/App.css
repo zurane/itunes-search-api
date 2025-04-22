@@ -10,7 +10,7 @@ body {
 
 /* App Container */
 .app-container {
-  max-width: 700px;
+  max-width: 800px;
   margin: 10px auto;
   padding: 4px 20px;
   border-radius: 10px;
@@ -70,7 +70,7 @@ body {
 }
 
 .favorites-container {
-  max-width: 700px;
+  max-width: 800px;
   margin: auto;
   padding: 5px;
 }
@@ -238,10 +238,11 @@ h1 {
 
 .error-message {
   color: #e07b01;
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 500;
   text-align: left !important;
   background: #ffbb801f;
+  border-radius: 5px;
   padding: 10px 9px;
   border-left: 5px solid #e07b01;
 }
@@ -382,7 +383,7 @@ h1 {
   text-align: left !important;
   padding: 15px 30px 10px 5px;
   background-color: #ffffff;
-  border-bottom: 2px solid #ffbdbd;
+  border-bottom: 1px solid #d30f47;
   margin-left: 8px;
 }
 
@@ -397,13 +398,18 @@ h1 {
 
 .tab-active::after {
   content: " ";
-  height: 4px;
+  height: 3px;
   width: 100%;
-  background-color: #ffbdbd;
+  background-color: #d30f47;
   position: absolute;
   bottom: -10px;
   right: 0;
   left: 0;
 }
 
-/* custom select */
+/* Overview page */
+
+.overview-container {
+  max-width: 800px;
+  margin: 10px auto;
+}

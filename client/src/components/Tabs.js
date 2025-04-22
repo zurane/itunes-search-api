@@ -5,8 +5,8 @@ function Tabs() {
   return (
     <div className="filters">
       <NavLink
-        to=""
-        className='tab'
+        to="all"
+        className={({ isActive }) => `tab${isActive ? " tab-active" : ""}`}
       >
         All
       </NavLink>

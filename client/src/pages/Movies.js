@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router";
 import { PiCaretRight } from "react-icons/pi";
-
 
 function Music() {
   // This component retrieves the favorites from local storage and displays them
@@ -17,6 +17,12 @@ function Music() {
     localStorage.setItem("favorites", JSON.stringify(updatedFavorites));
   };
 
+  // const viewTrack = (id) => {
+  //   const track = favorites.filter((item) => item.trackId === id);
+  //   console.log(track);
+  //   setItem(track);
+  // };
+
   return (
     <>
       <div className="favorites-container">
@@ -26,8 +32,9 @@ function Music() {
             {favorites
               .filter((item) => item.kind === "feature-movie") // Filter items with kind === "song"
               .map((item, index) => (
-                <li key={index} className="result-item">
-                  <img
+                <li key={index}>
+                 <Link to={`/track/${item.trackId}`} className="result-item">
+                 <img
                     src={item.artworkUrl100}
                     alt={item.trackName}
                     className="result-image"
@@ -40,8 +47,9 @@ function Music() {
                     onClick={() => removeFromFavorites(item.trackId)}
                     className="delete-btn"
                   >
-                    <PiCaretRight/>
+                    <PiCaretRight />
                   </button>
+                 </Link>
                 </li>
               ))}
           </ul>

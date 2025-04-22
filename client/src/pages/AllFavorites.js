@@ -2,8 +2,6 @@ import React from "react";
 import { useState, useEffect } from "react";
 import { PiCaretRight } from "react-icons/pi";
 import { Outlet } from "react-router-dom"; // Import Outlet for nested routes
-import Tabs from "../components/Tabs"; // Import the Tabs component
-
 function AllFavorites() {
   // This component retrieves the favorites from local storage and displays them
   const [favorites, setFavorites] = useState([]);
