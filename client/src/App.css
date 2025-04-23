@@ -257,11 +257,17 @@ h1 {
   position: relative;
   display: flex;
   align-items: center;
+  text-decoration: none;
+  color: #000;
   gap: 15px;
   background: #fff;
   padding: 15px;
   border-bottom: 1px solid #f1f1f1;
   transition: transform 0.2s ease-in-out;
+}
+
+.result-item:hover .result-image {
+  transform: scale(1.05);
 }
 
 .fav-result-item {
@@ -321,16 +327,33 @@ h1 {
   box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
 }
 
+.overview-result-image {
+  width: 109px;
+  height: 109px;
+  border-radius: 5px;
+  border: 1px solid #f1f1f1;
+  box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
 .result-info {
   display: block;
   justify-content: left !important;
   align-items: left !important;
   text-align: left !important;
   line-height: 22px;
+  padding-top: 15px;
+
 }
 
 .artist-name {
   color: #777;
+  font-size: 13px;
+  font-weight: normal;
+  text-align: left !important;
+}
+
+.genre {
+  color: #080808;
   font-size: 13px;
   font-weight: normal;
   text-align: left !important;
@@ -368,12 +391,29 @@ h1 {
   cursor: pointer;
   color: #ff2020;
   font-size: 13px;
-  right: 8px;
+  right: 1px;
   padding-right: 30px;
   border-radius: 100%;
   width: 30px;
   transition: transform 0.2s ease-in-out;
 }
+
+.preview-btn {
+  border: none !important;
+  cursor: pointer;
+  color: #ff2020;
+  background-color: transparent;
+  font-size: 25px;
+  padding: 0;
+  margin-top: 5px;
+  transition: transform 0.2s ease-in-out;
+}
+
+/* .preview-icon {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+} */
 
 .filters {
   display: flex;

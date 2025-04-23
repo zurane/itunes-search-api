@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from "react-router";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useState } from "react";
 import Dashboard from "./pages/Dashboard";
 import FavoritesPage from "./pages/FavoritesPage";
@@ -15,6 +15,7 @@ import Overview from "./pages/Overview";
 function App() {
   const [token, setToken] = useState(localStorage.getItem("token") || "");
 
+  // Logs out the user by clearing the token and removing it from local storage
   const handleLogout = () => {
     setToken("");
     localStorage.removeItem("token");
@@ -25,16 +26,19 @@ function App() {
       {!token ? (
         <Login setToken={setToken} />
       ) : (
-        <Layout handleLogout={handleLogout}>
+        <Layout onLogout={handleLogout}>
           <Routes>
             <Route path="/" element={<Dashboard />} />
             <Route path="/favorites" element={<FavoritesPage />}>
-              <Route path="/favorites/all" element={<AllFavorites />} />
+              <Route path="all" element={<AllFavorites />} />
               <Route path="music" element={<Music />} />
               <Route path="movies" element={<Movies />} />
               <Route path="podcasts" element={<Podcasts />} />
             </Route>
-            <Route path="track/:id" element={<Overview />} />
+            <Route
+              path="/favorites/details/:type/:id"
+              element={<Overview />}
+            />
             <Route path="/contact" element={<ContactUs />} />
             <Route path="/support" element={<Support />} />
           </Routes>
