@@ -3,6 +3,7 @@ import { PiMagnifyingGlass } from "react-icons/pi";
 function SearchBar({ term, setTerm, media, setMedia, search }) {
   return (
     <div className="search-container">
+      <p>Discover the Entertainment You Love – Music, Movies & More</p>
       <div className="search-bar">
         <input
           type="text"

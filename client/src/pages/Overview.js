@@ -1,6 +1,6 @@
 import { useParams, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { PiPlayCircleFill } from "react-icons/pi";
+import { PiPlayCircleFill,PiCaretCircleLeftLight } from "react-icons/pi";
 
 function Overview() {
   const { type, id } = useParams();
@@ -20,15 +20,18 @@ function Overview() {
       <div className="overview-container">
         <button onClick={() => navigate(-1)}>← Back</button>
         <h1>Item Not Found</h1>
-        <p>Sorry, we couldn’t find a {type} with ID {id}.</p>
+        <p>
+          Sorry, we couldn’t find a {type} with ID {id}.
+        </p>
       </div>
     );
   }
 
   return (
     <div className="overview-container">
-      <button onClick={() => navigate(-1)}>← Back</button>
-      <h1>{item.trackName}</h1>
+      <button className="back-btn" onClick={() => navigate(-1)}>
+        <span className="btn-icon"><PiCaretCircleLeftLight /> Back</span>
+      </button>
       <li className="result-item">
         <img
           src={item.artworkUrl100}

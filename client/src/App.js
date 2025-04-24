@@ -14,7 +14,6 @@ import Overview from "./pages/Overview";
 
 function App() {
   const [token, setToken] = useState(localStorage.getItem("token") || "");
-
   // Logs out the user by clearing the token and removing it from local storage
   const handleLogout = () => {
     setToken("");
@@ -26,7 +25,7 @@ function App() {
       {!token ? (
         <Login setToken={setToken} />
       ) : (
-        <Layout onLogout={handleLogout}>
+        <Layout handleLogout={handleLogout}>
           <Routes>
             <Route path="/" element={<Dashboard />} />
             <Route path="/favorites" element={<FavoritesPage />}>
@@ -35,10 +34,7 @@ function App() {
               <Route path="movies" element={<Movies />} />
               <Route path="podcasts" element={<Podcasts />} />
             </Route>
-            <Route
-              path="/favorites/details/:type/:id"
-              element={<Overview />}
-            />
+            <Route path="/favorites/details/:type/:id" element={<Overview />} />
             <Route path="/contact" element={<ContactUs />} />
             <Route path="/support" element={<Support />} />
           </Routes>

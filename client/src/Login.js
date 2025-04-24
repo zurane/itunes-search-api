@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
-import "./Login.css"; // Import styles
+import "./Login.css";
 
 function Login({ setToken }) {
   const [username, setUsername] = useState("");
@@ -35,12 +35,7 @@ function Login({ setToken }) {
     <>
       <div className="login-container">
         <h2>Log in to continue</h2>
-        {error && (
-          <p className="error-message">
-            
-            {error}
-          </p>
-        )}
+        {error && <p className="error-message">{error}</p>}
         <form onSubmit={handleLogin}>
           <input
             type="text"

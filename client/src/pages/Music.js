@@ -2,11 +2,9 @@ import React, { useState, useEffect } from "react";
 import { PiCaretRight } from "react-icons/pi";
 import { Link, Outlet } from "react-router-dom";
 
-
 function Music() {
   // This component retrieves the favorites from local storage and displays them
   const [favorites, setFavorites] = useState([]);
- 
 
   useEffect(() => {
     const storedFavorites = JSON.parse(localStorage.getItem("favorites")) || [];

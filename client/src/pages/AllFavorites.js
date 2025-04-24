@@ -24,7 +24,10 @@ function AllFavorites() {
           <ul className="results-list">
             {favorites.map((item, index) => (
               <li key={index}>
-                <Link to={`details/${item.trackId}`} className="result-item">
+                <Link
+                  to={`/favorites/details/all/${item.trackId}`}
+                  className="result-item"
+                >
                   <img
                     src={item.artworkUrl100}
                     alt={item.trackName}

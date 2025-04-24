@@ -1,24 +1,33 @@
-@import url("https://fonts.cdnfonts.com/css/helvetica-neue-55");
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
 
-/* General Styling */
 body {
-  font-family: "Helvetica Neue", sans-serif;
+  font-family: "Inter", sans-serif;
   background-color: #f8f9fa;
   margin: 0;
   padding: 0;
 }
 
+::-webkit-scrollbar {
+  width: 15px;
+}
+
+.header-container {
+  position: relative;
+  height: 40vh;
+  width: 100vmax;
+  background-color: #1c18eb;
+}
+
 /* App Container */
-.app-container {
-  max-width: 800px;
+/* .app-container {
+  max-width: 1100px;
   margin: 10px auto;
   padding: 4px 20px;
   border-radius: 10px;
-  text-align: center;
-}
+} */
 
 .app-side-menu {
-  position: fixed;
+  position: sticky;
   top: 0;
   left: 0;
   width: 200px;
@@ -64,13 +73,13 @@ body {
   gap: 5px;
 }
 
-.footer-icons > a {
+.footer-icons>a {
   margin-top: 20px 0;
   text-decoration: none;
 }
 
 .favorites-container {
-  max-width: 800px;
+  max-width: 1100px;
   margin: auto;
   padding: 5px;
 }
@@ -86,7 +95,7 @@ body {
   padding: 10px;
 }
 
-.fav-header > div > button {
+.fav-header>div>button {
   background: none;
   padding-top: 5px;
   border: none;
@@ -132,8 +141,9 @@ h1 {
 
 /* Logout Button */
 .logout-button {
-  padding: 10px 20px;
+  padding: 7px 15px;
   background: #ff375f;
+  box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.082);
   color: white;
   font-size: 14px;
   font-weight: 600;
@@ -146,20 +156,39 @@ h1 {
   background: #d30f47;
 }
 
-/* Search Section */
+/* =========================== Search bar ================================ */
 .search-container {
+  max-width: 800px;
   display: flex;
   align-items: center;
+  line-height: 25px;
   gap: 10px;
-  margin: 10px 0;
+  margin: 0 auto;
   flex-wrap: wrap;
+  background-color: white;
+
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 30px 20px;
+  border-radius: 5px;
+  box-shadow: -5px 0 10px rgba(129, 129, 129, 0.062);
+}
+
+.search-container p {
+  font-family: "Special Gothic Expanded One", sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 0;
+  margin: 10px 0px;
 }
 
 .search-bar {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0px 12px;
+  padding: 5px 12px;
   width: 100%;
   border: 5px solid #f1f1f1;
   box-shadow: -5px 0 10px rgba(190, 190, 190, 0.048);
@@ -204,12 +233,25 @@ h1 {
   cursor: pointer;
 }
 
+/* =========================== Navigation bar ================================ */
 .navigation-container {
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  z-index: 1000;
+  background-color: #1c18eb62;
+  border-bottom: 1px solid #0151ff;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  border-radius: 10px;
-  padding: 15px 2px;
+  justify-content: center;
+  gap: 12.9%;
+  padding: 10px 2px;
+}
+
+.navigation-header {
+  max-width: 1100px;
 }
 
 .navigation-list {
@@ -226,8 +268,14 @@ h1 {
   margin: 0 10px;
   font-size: 14px;
   text-decoration: none;
-  color: #333;
+  color: #ffffff;
   cursor: pointer;
+}
+
+.special-btn {
+  background-color: #2332ffa2;
+  padding: 7px 10px;
+  border-radius: 5px;
 }
 
 /* Loading and Error Messages */
@@ -247,7 +295,17 @@ h1 {
   border-left: 5px solid #e07b01;
 }
 
-/* Results List */
+/* =========================== Navigation bar ================================ */
+
+.results-container {
+  margin: 90px 0px 0px 0px;
+}
+
+.search-feed {
+  max-width: 827px;
+  margin: 0 auto;
+}
+
 .results-list {
   list-style: none;
   padding: 0;
@@ -342,7 +400,6 @@ h1 {
   text-align: left !important;
   line-height: 22px;
   padding-top: 15px;
-
 }
 
 .artist-name {
@@ -409,22 +466,35 @@ h1 {
   transition: transform 0.2s ease-in-out;
 }
 
-/* .preview-icon {
+.back-btn {
+  cursor: pointer;
+  background: #ffffff;
+  color: rgb(14, 14, 14);
+  font-size: 15px;
+  font-weight: 400;
+  border: 1px solid #0000000c;
+  border-radius: 5px;
+  padding: 7px 15px;
+  margin: 10px 0px;
+  box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.082);
+}
+
+.btn-icon {
   display: inline-flex;
   align-items: center;
-  gap: 3px;
-} */
+  gap: 5px;
+}
 
 .filters {
+  max-width: 1100px;
+  margin: 0 auto;
   display: flex;
   align-items: center;
-  justify-content: left !important;
   gap: 25px;
   text-align: left !important;
-  padding: 15px 30px 10px 5px;
+  padding: 15px 0px 10px 0px;
   background-color: #ffffff;
   border-bottom: 1px solid #d30f47;
-  margin-left: 8px;
 }
 
 .tab {
@@ -450,6 +520,6 @@ h1 {
 /* Overview page */
 
 .overview-container {
-  max-width: 800px;
+  max-width: 1100px;
   margin: 10px auto;
 }
