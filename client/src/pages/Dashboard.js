@@ -12,6 +12,7 @@ function Dashboard() {
   const [results, setResults] = useState([]);
   const [loading, setLoading] = useState(false);
   const [token, setToken] = useState(localStorage.getItem("token") || "");
+  
   const [favorites, setFavorites] = useState(() => {
     const stored = localStorage.getItem("favorites");
     return stored ? JSON.parse(stored) : [];
@@ -63,48 +64,48 @@ function Dashboard() {
           <Login setToken={setToken} />
         ) : (
           <>
- 
-           <SearchBar
+            <SearchBar
               term={term}
               media={media}
               setMedia={setMedia}
               setTerm={setTerm}
               search={search}
             />
-  
 
             {loading && (
               <LinearProgress color="neutral" size="sm" thickness={1} />
             )}
             {error && <span className="error-message">{error}</span>}
 
-          <div className="results-container">
-          <article className="search-feed">
-              <ul className="results-list">
-                {results.length > 0
-                  ? results.map((item, index) => (
-                      <li key={index} className="result-item">
-                        <img
-                          src={item.artworkUrl100}
-                          alt={item.trackName}
-                          className="result-image"
-                        />
-                        <div className="result-info">
-                          <div>{item.trackName}</div>
-                          <div className="artist-name">{item.artistName}</div>
-                        </div>
-                        <button
-                          onClick={() => addFavorite(item)}
-                          className="fav-btn"
-                        >
-                          <PiPlusCircle />
-                        </button>
-                      </li>
-                    ))
-                  : !loading && <p className="no-results">No results found.</p>}
-              </ul>
-            </article>
-          </div>
+            <div className="results-container">
+              <article className="search-feed">
+                <ul className="results-list">
+                  {results.length > 0
+                    ? results.map((item, index) => (
+                        <li key={index} className="result-item">
+                          <img
+                            src={item.artworkUrl100}
+                            alt={item.trackName}
+                            className="result-image"
+                          />
+                          <div className="result-info">
+                            <div>{item.trackName}</div>
+                            <div className="artist-name">{item.artistName}</div>
+                          </div>
+                          <button
+                            onClick={() => addFavorite(item)}
+                            className="fav-btn"
+                          >
+                            <PiPlusCircle />
+                          </button>
+                        </li>
+                      ))
+                    : !loading && (
+                        <p className="no-results">No results found.</p>
+                      )}
+                </ul>
+              </article>
+            </div>
           </>
         )}
       </div>
